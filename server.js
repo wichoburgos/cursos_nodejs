@@ -25,6 +25,7 @@ class Server{
     listen(){
         this.app.listen(this.port);
     }
+
 }
 
 module.exports = Server;
