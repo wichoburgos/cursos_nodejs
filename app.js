@@ -1,7 +1,7 @@
-conit express = require('express');
+const express = require('express');
 
-conit app = express();
+const app = express();
 
-app.get('/', function (req, res){res.send('Hola Mundo')})
+app.get('/', function (req, res) { res.send('Hola Mundo'); });
 
 app.listen(3000);
