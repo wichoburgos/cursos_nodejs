@@ -1,0 +1,11 @@
+{
+  "name": "cursos_nodejs",
+  "version": "1.0.0",
+  "description": "Proyecto del curso de odeJS 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Omar Burgos Parra",
+  "license": "ISC"
+}
