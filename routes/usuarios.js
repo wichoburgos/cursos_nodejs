@@ -1,5 +1,18 @@
-const express = require("express");
+const { Router } = require("express");
+const {
+    usuariosGet,
+    usuariosPost,
+    usuariosPut,
+    usuariosDelete,
+} = requiere("../controllers/usuarios");
 
-const app = express();
+const router = Router();
 
-app.Route
+//localhost:3001/usuarios
+router.get("/", usuariosGet)
+router.post("/", usuariosPost)
+router.put("/", usuariosPut)
+router.delete("/", usuariosDelete)
+router.post("/signin/", usuarioSignIn)
+
+module.exports = router;
