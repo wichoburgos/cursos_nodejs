@@ -1,29 +1,30 @@
 const express = require("express");
+const cors = require("cors");
 
-class Server {
-  constructor() {
-    this.app = express();
-    this.port = process.env.PORT;
+class Server{
+    constructor(){
+        this.app = express();
+        this.port = process.env.PORT;
+        this.rutasUsuarios = "/usuarios";
 
-this.routes();
-  }
+        this.middlewares();
+        this.routes();
 
-  routes() {
-    this.app.get("/", function (req, res) {
-      res.json({msg: "Hola Mundo desde  GET"});
-     });
-     this.app.post("/", function (req, res) {
-       res.status(201).json({msg: "Hola Mundo desde POST"});
-      });
-      this.app.put("/", function (req, res) {
-        res.status(400).json({msg: "Hola Mundo desde PUT"});
-       });
-       this.app.delete("/", function (req, res) {
-         res.status(500).json({msg: "Hola Mundo desde DELETE"});
-        });
-  }
-  listen() {
-    this.app.listen(this.port);
-  }
+    }
+
+    middlewares(){
+       this.app.use(cors());
+
+    }
+
+    routes(){
+        this.app.use(this.rutasUsuarios, require("./routes/usuarios"));
+
+    }
+
+    listen(){
+        this.app.listen(this.port);
+    }
 }
+
 module.exports = Server;
